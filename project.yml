@@ -1,0 +1,32 @@
+name: Ledger
+options:
+  bundleIdPrefix: com.rosberry
+targets:
+  Ledger:
+    type: framework
+    platform: iOS
+    sources: [Sources/Ledger]
+    info:
+      path: Ledger.xcodeproj/Ledger.plist
+  LedgerTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "12.0"
+    sources: [Tests/LedgerTests]
+    info:
+      path: Ledger.xcodeproj/LedgerTests.plist
+    postCompileScripts:
+      - script: swiftlint
+        name: Swiftlint
+  Example:
+    type: application
+    platform: iOS
+    deploymentTarget: "12.0"
+    sources: [Sources/Example]
+    info:
+      path: Ledger.xcodeproj/Example.plist
+    dependencies:
+      - target: Ledger
+    postCompileScripts:
+      - script: swiftlint
+        name: Swiftlint
