@@ -1,0 +1,7 @@
+carts:
+  - kind: github
+    identifier: bizz84/SwiftyStoreKit
+  - kind: github
+    identifier: kishikawakatsumi/KeychainAccess
+  - kind: github
+    identifier: MobileNativeFoundation/Kronos

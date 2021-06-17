@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import Ledger
 
 typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
 
@@ -14,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = ExampleViewController()
         window?.makeKeyAndVisible()
+
+        Ledger.start(sharedSecret: "1e06aba3f9ea494eadfe085966c96258")
+        Ledger.fetchProducts(withIdentifiers: ["com.filmm.filmm.pack.35mm", "com.filmm.filmm.plus"]) { (products: [String: Product]) in
+            print(products)
+        }
+
         return true
     }
 }
