@@ -4,8 +4,12 @@
 
 import UIKit
 import Ledger
+import Ion
 
 final class ExampleViewController: UIViewController {
+
+    private lazy var purchaseEventCollector: Collector<PurchaseInfo> = .init(source: Ledger.purchaseEventSource)
+    private lazy var productInfoCollector: Collector<Product> = .init(source: Ledger.productInfoSource)
 
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()
@@ -33,6 +37,14 @@ final class ExampleViewController: UIViewController {
         view.addSubview(subscribeButton)
         view.backgroundColor = .white
         checkSubscriptionStatus()
+
+        productInfoCollector.subscribe { (product: Product) in
+            print(product)
+        }
+
+        purchaseEventCollector.subscribe { (info: PurchaseInfo) in
+            self.showAlert(withTitle: "Success", message: info.identifier)
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -48,20 +60,18 @@ final class ExampleViewController: UIViewController {
     }
 
     @objc private func purchaseButtonPressed() {
-        Ledger.purchaseProduct(withIdentifier: "com.filmm.filmm.pack.16mm") { (product: Product) in
-            self.showAlert(withTitle: "Success", message: product.identifier)
-            print(Ledger.receipt)
-        } failure: { (error: Error) in
-            self.showAlert(withTitle: "Error", message: error.localizedDescription)
+        Ledger.purchaseProduct(withIdentifier: "com.filmm.filmm.pack.dream") { (error: Error?) in
+            if let error = error {
+                self.showAlert(withTitle: "Error", message: error.localizedDescription)
+            }
         }
     }
 
     @objc private func subscribeButtonPressed() {
-        Ledger.purchaseProduct(withIdentifier: "com.filmm.filmm.plus") { (product: Product) in
-            self.showAlert(withTitle: "Success", message: product.identifier)
-            print(Ledger.receipt)
-        } failure: { (error: Error) in
-            self.showAlert(withTitle: "Error", message: error.localizedDescription)
+        Ledger.purchaseProduct(withIdentifier: "com.filmm.filmm.plus") { (error: Error?) in
+            if let error = error {
+                self.showAlert(withTitle: "Error", message: error.localizedDescription)
+            }
         }
     }
 

@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         Ledger.start(sharedSecret: "1e06aba3f9ea494eadfe085966c96258")
-        Ledger.fetchProducts(withIdentifiers: ["com.filmm.filmm.pack.35mm", "com.filmm.filmm.plus"]) { (products: [String: Product]) in
-            print(products)
-        }
+        Ledger.debugModeReceipt = .init(purchases: [
+            .init(identifier: "com.filmm.filmm.pack.dream", type: .nonConsumable)
+        ])
+        Ledger.fetchProducts(withIdentifiers: ["com.filmm.filmm.pack.dream", "com.filmm.filmm.plus"])
 
         return true
     }

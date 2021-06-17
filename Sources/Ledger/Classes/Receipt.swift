@@ -16,6 +16,13 @@ public struct PurchaseInfo: Codable {
     public let expirationDate: Date
     public let quantity: Int
 
+    public init(identifier: String, type: PurchaseType, expirationDate: Date = .distantFuture, quantity: Int = 1) {
+        self.identifier = identifier
+        self.type = type
+        self.expirationDate = expirationDate
+        self.quantity = quantity
+    }
+
     init?(dictionary: [String: Any]) {
         guard let identifier = dictionary["product_id"] as? String else {
             return nil
@@ -39,9 +46,12 @@ public struct Receipt: Codable {
     public let creationDate: Date
     public var purchases: [String: PurchaseInfo]
 
-    init() {
+    public init(purchases: [PurchaseInfo] = []) {
         creationDate = Date()
-        purchases = [:]
+        self.purchases = [:]
+        for purchase in purchases {
+            self.purchases[purchase.identifier] = purchase
+        }
     }
 
     init?(dictionary: [String: Any]) {
@@ -72,5 +82,9 @@ public struct Receipt: Codable {
         else {
             creationDate = Date()
         }
+    }
+
+    public func purchaseInfo(withIdentifier identifier: String) -> PurchaseInfo? {
+        return purchases[identifier]
     }
 }

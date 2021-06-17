@@ -1,3 +1,4 @@
-github "bizz84/SwiftyStoreKit"
-github "kishikawakatsumi/KeychainAccess"
-github "MobileNativeFoundation/Kronos"
+github "bizz84/SwiftyStoreKit" "0.16.3"
+github "kishikawakatsumi/KeychainAccess" "v4.2.2"
+github "MobileNativeFoundation/Kronos" "4.2.1"
+github "rosberry/ion"

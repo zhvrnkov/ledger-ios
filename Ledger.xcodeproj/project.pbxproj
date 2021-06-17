@@ -21,6 +21,9 @@
 		57D7DB0F267A06430007FF86 /* Kronos.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DB0E267A06430007FF86 /* Kronos.xcframework */; };
 		57D7DB15267A064B0007FF86 /* Kronos.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DB0E267A06430007FF86 /* Kronos.xcframework */; };
 		57D7DB16267A064B0007FF86 /* Kronos.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DB0E267A06430007FF86 /* Kronos.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57D7DB4F267B33C70007FF86 /* Ion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DB4E267B33C60007FF86 /* Ion.xcframework */; };
+		57D7DB55267B33D30007FF86 /* Ion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DB4E267B33C60007FF86 /* Ion.xcframework */; };
+		57D7DB56267B33D30007FF86 /* Ion.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DB4E267B33C60007FF86 /* Ion.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6B0D957D9085D38ECE5FEEAA /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E66733DB1CC9A1C4CF3FD37 /* ExampleViewController.swift */; };
 		8892CE47BF2B28AD928864EA /* Ledger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 810548AB366887C01104E65A /* Ledger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A9C9A524BFEB3F96D03181F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5CB4F7E6008CA2D0A6411 /* AppDelegate.swift */; };
@@ -47,6 +50,7 @@
 			files = (
 				57D7DB032679F9200007FF86 /* SwiftyStoreKit.xcframework in Embed Frameworks */,
 				57D7DB16267A064B0007FF86 /* Kronos.xcframework in Embed Frameworks */,
+				57D7DB56267B33D30007FF86 /* Ion.xcframework in Embed Frameworks */,
 				8892CE47BF2B28AD928864EA /* Ledger.framework in Embed Frameworks */,
 				57D7DB012679F9200007FF86 /* KeychainAccess.xcframework in Embed Frameworks */,
 			);
@@ -65,6 +69,8 @@
 		57D7DB062679F9440007FF86 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		57D7DB0A2679FEC60007FF86 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		57D7DB0E267A06430007FF86 /* Kronos.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kronos.xcframework; path = Carthage/Build/Kronos.xcframework; sourceTree = "<group>"; };
+		57D7DB19267B2D4F0007FF86 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		57D7DB4E267B33C60007FF86 /* Ion.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Ion.xcframework; path = Carthage/Build/Ion.xcframework; sourceTree = "<group>"; };
 		810548AB366887C01104E65A /* Ledger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ledger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		824D5E5940F7B5D8B1F4B4A2 /* LedgerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerTests.swift; sourceTree = "<group>"; };
 		A912FD0D6935E8923A47B2BB /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +87,7 @@
 				57D7DB022679F9200007FF86 /* SwiftyStoreKit.xcframework in Frameworks */,
 				FC8EF8D6F576F130B0DB5FDC /* Ledger.framework in Frameworks */,
 				57D7DB002679F9200007FF86 /* KeychainAccess.xcframework in Frameworks */,
+				57D7DB55267B33D30007FF86 /* Ion.xcframework in Frameworks */,
 				57D7DB072679F9440007FF86 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D7DB4F267B33C70007FF86 /* Ion.xcframework in Frameworks */,
 				57D7DB0F267A06430007FF86 /* Kronos.xcframework in Frameworks */,
 				57D7DAE12679EE640007FF86 /* SwiftyStoreKit.xcframework in Frameworks */,
 				57D7DAE32679EE640007FF86 /* KeychainAccess.xcframework in Frameworks */,
@@ -112,6 +120,7 @@
 			children = (
 				32E5CB4F7E6008CA2D0A6411 /* AppDelegate.swift */,
 				0E66733DB1CC9A1C4CF3FD37 /* ExampleViewController.swift */,
+				57D7DB19267B2D4F0007FF86 /* Configuration.storekit */,
 			);
 			name = Example;
 			path = Sources/Example;
@@ -130,6 +139,7 @@
 		57D7DADE2679EE640007FF86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57D7DB4E267B33C60007FF86 /* Ion.xcframework */,
 				57D7DB0E267A06430007FF86 /* Kronos.xcframework */,
 				57D7DB062679F9440007FF86 /* StoreKit.framework */,
 				57D7DAE02679EE640007FF86 /* KeychainAccess.xcframework */,

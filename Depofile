@@ -1,7 +1,18 @@
 carts:
   - kind: github
     identifier: bizz84/SwiftyStoreKit
+    version:
+      operation: equal
+      value: 0.16.3
   - kind: github
     identifier: kishikawakatsumi/KeychainAccess
+    version:
+      operation: equal
+      value: v4.2.2
   - kind: github
     identifier: MobileNativeFoundation/Kronos
+    version:
+      operation: equal
+      value: 4.2.1
+  - kind: github
+    identifier: rosberry/ion

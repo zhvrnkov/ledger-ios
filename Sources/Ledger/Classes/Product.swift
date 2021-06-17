@@ -5,14 +5,18 @@
 import Foundation
 import StoreKit
 
-public final class Product {
+public final class Product: CustomStringConvertible {
     public let identifier: String
     public let title: String
-    public let description: String
+    public let info: String
     public let price: String?
 
     public let rawPrice: NSDecimalNumber
     public let locale: Locale
+
+    public var description: String {
+        return "\(identifier) [\(price ?? "N/A")]"
+    }
 
     let storeProduct: SKProduct
 
@@ -20,7 +24,7 @@ public final class Product {
         self.storeProduct = storeProduct
         identifier = storeProduct.productIdentifier
         title = storeProduct.localizedTitle
-        description = storeProduct.localizedDescription
+        info = storeProduct.localizedDescription
         price = storeProduct.localizedPrice
 
         rawPrice = storeProduct.price
