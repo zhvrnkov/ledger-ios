@@ -21,11 +21,15 @@ public final class Ledger {
 
     public private(set) static var receipt: Receipt = fetchCachedReceipt() {
         didSet {
+            receiptUpdateEventEmitter.replace(receipt)
             if let data = try? JSONEncoder().encode(receipt) {
                 try? keychain.set(data, key: Constants.keychainReceiptKey)
             }
         }
     }
+
+    private static var receiptUpdateEventEmitter: Emitter<Receipt> = .init()
+    public static var receiptUpdateEventSource: AnyEventSource<Receipt> = .init(receiptUpdateEventEmitter)
 
     private static var purchaseEventEmitter: Emitter<PurchaseInfo> = .init(valueStackDepth: 0)
     public static var purchaseEventSource: AnyEventSource<PurchaseInfo> = .init(purchaseEventEmitter)
