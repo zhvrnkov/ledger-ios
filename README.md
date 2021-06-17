@@ -1,7 +1,7 @@
 # Ledger
 <p align="center">
-    <a href="https://github.com/rosberry/Ledger/actions">
-      <img src="https://github.com/rosberry/Ledger/workflows/Build/badge.svg" />
+    <a href="https://github.com/rosberry/ledger-ios/actions">
+      <img src="https://github.com/rosberry/ledger-ios/workflows/Build/badge.svg" />
     </a>
     <a href="https://swift.org/">
         <img src="https://img.shields.io/badge/swift-5.0-orange.svg" alt="Swift Version" />
@@ -16,7 +16,7 @@
 
 ## Requirements
 
-- iOS 11.0+
+- iOS 13.0+
 - Xcode 11.0+
 
 ## Installation
@@ -29,11 +29,11 @@ To install `Ledger` via Carthage using Depo you need to add this to your `Depofi
 ```yaml
 carts:
   - kind: github
-    identifier: rosberry/Ledger
+    identifier: rosberry/ledger-ios
 ```
 
 <details>
-  <summary>To install Ledger via SPM or CocoaPods</summary>
+  <summary>To install Ledger via SPM</summary>
 
   #### Via SPM
   Add this to your Depofile:
@@ -41,19 +41,12 @@ carts:
   ```yaml
   swiftPackages:
     - name: Ledger
-      url: https://github.com/rosberry/Ledger.git
+      url: https://github.com/rosberry/ledger-ios.git
       version:
         operation: upToNextMajor
         value: 1.0.0
   ```
-  
-  #### Via CocoaPods
-  Add this to your Depofile:
-  
-  ```yaml
-  pods:
-    - name: Ledger
-  ```
+
 </details>
 
 ### Carthage
@@ -61,15 +54,7 @@ carts:
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate Ledger into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "rosberry/Ledger"
-```
-
-### CocoaPods
-
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Ledger into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-pod 'Ledger'
+github "rosberry/ledger-ios"
 ```
 
 ### Swift Package Manager
@@ -78,13 +63,13 @@ The [Swift Package Manager](https://swift.org/package-manager/) is a tool for au
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/rosberry/Ledger.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/rosberry/ledger-ios.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
 
 ## Documentation
 
-Read the [docs](https://rosberry.github.io/Ledger). Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
+Read the [docs](https://rosberry.github.io/ledger-ios). Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
 
 ## About
 
