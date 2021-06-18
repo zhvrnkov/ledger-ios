@@ -158,7 +158,10 @@ public final class Ledger {
                 case let .error(error):
                     DispatchQueue.main.async {
                         switch error.code {
-                        case .unknown, .paymentCancelled:
+                        case .unknown:
+                            validateReceipt()
+                            completion(nil)
+                        case .paymentCancelled:
                             completion(nil)
                         default:
                             completion(error)
