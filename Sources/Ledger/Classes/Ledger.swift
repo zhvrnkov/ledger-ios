@@ -68,7 +68,7 @@ public final class Ledger {
                 }
             }
 
-            validateReceipt { (_: Receipt) in
+            refreshReceipt { (_: Receipt) in
                 for purchase in purchases where purchase.needsFinishTransaction {
                     SwiftyStoreKit.finishTransaction(purchase.transaction)
                     objc_sync_enter(self)
@@ -80,7 +80,33 @@ public final class Ledger {
             }
         }
 
-        validateReceipt()
+        refreshReceipt()
+    }
+
+    public static func refreshReceipt(success: @escaping (Receipt) -> Void = { _ in },
+                                      failure: @escaping (Swift.Error) -> Void = { _ in }) {
+        if skipReceiptValidation {
+            receiptUpdateEventEmitter.replace(receipt)
+            return success(receipt)
+        }
+
+        guard sharedSecret.isEmpty == false else {
+            fatalError("No shared secret is provided")
+        }
+
+        let validator = AppleReceiptValidator(service: .production, sharedSecret: sharedSecret)
+        SwiftyStoreKit.verifyReceipt(using: validator, forceRefresh: false) { (result: VerifyReceiptResult) in
+            switch result {
+            case .success(let receipt):
+                objc_sync_enter(self)
+                self.receipt = Receipt(dictionary: receipt) ?? .init()
+                objc_sync_exit(self)
+                success(self.receipt)
+            case .error(let error):
+                print("[EE] Error validating receipt: \(error)")
+                failure(error)
+            }
+        }
     }
 
     public static func removeCachedReceipt() {
@@ -138,7 +164,7 @@ public final class Ledger {
                         objc_sync_exit(self)
                     }
 
-                    validateReceipt { (_: Receipt) in
+                    refreshReceipt { (_: Receipt) in
                         if details.needsFinishTransaction {
                             SwiftyStoreKit.finishTransaction(details.transaction)
                         }
@@ -159,7 +185,7 @@ public final class Ledger {
                     DispatchQueue.main.async {
                         switch error.code {
                         case .unknown:
-                            validateReceipt()
+                            refreshReceipt()
                             completion(nil)
                         case .paymentCancelled:
                             completion(nil)
@@ -221,31 +247,5 @@ public final class Ledger {
         }
 
         return receipt
-    }
-
-    private static func validateReceipt(success: @escaping (Receipt) -> Void = { _ in },
-                                        failure: @escaping (Swift.Error) -> Void = { _ in }) {
-        if skipReceiptValidation {
-            receiptUpdateEventEmitter.replace(receipt)
-            return success(receipt)
-        }
-
-        guard sharedSecret.isEmpty == false else {
-            fatalError("No shared secret is provided")
-        }
-
-        let validator = AppleReceiptValidator(service: .production, sharedSecret: sharedSecret)
-        SwiftyStoreKit.verifyReceipt(using: validator, forceRefresh: false) { (result: VerifyReceiptResult) in
-            switch result {
-            case .success(let receipt):
-                objc_sync_enter(self)
-                self.receipt = Receipt(dictionary: receipt) ?? .init()
-                objc_sync_exit(self)
-                success(self.receipt)
-            case .error(let error):
-                print("[EE] Error validating receipt: \(error)")
-                failure(error)
-            }
-        }
     }
 }
