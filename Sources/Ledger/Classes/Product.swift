@@ -14,6 +14,8 @@ public final class Product: CustomStringConvertible {
     public let rawPrice: NSDecimalNumber
     public let locale: Locale
 
+    public let subscriptionPeriod: SKProductSubscriptionPeriod?
+
     public var description: String {
         return "\(identifier) [\(price ?? "N/A")]"
     }
@@ -29,5 +31,7 @@ public final class Product: CustomStringConvertible {
 
         rawPrice = storeProduct.price
         locale = storeProduct.priceLocale
+
+        subscriptionPeriod = storeProduct.subscriptionPeriod
     }
 }

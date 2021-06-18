@@ -16,11 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = ExampleViewController()
         window?.makeKeyAndVisible()
 
-        Ledger.start(sharedSecret: "1e06aba3f9ea494eadfe085966c96258")
-        Ledger.debugModeReceipt = .init(purchases: [
-            .init(identifier: "com.filmm.filmm.pack.dream", type: .nonConsumable)
-        ])
-        Ledger.fetchProducts(withIdentifiers: ["com.filmm.filmm.pack.dream", "com.filmm.filmm.plus"])
+        Ledger.start(sharedSecret: Constants.sharedSecret)
+        Ledger.fetchProducts(withIdentifiers: [Constants.yearlySubscriptionIdentifier, Constants.monthlySubscriptionIdentifier])
 
         return true
     }

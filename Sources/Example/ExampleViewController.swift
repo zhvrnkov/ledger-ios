@@ -8,6 +8,7 @@ import Ion
 
 final class ExampleViewController: UIViewController {
 
+    private lazy var receiptUpdateEventCollector: Collector<Receipt> = .init(source: Ledger.receiptUpdateEventSource)
     private lazy var purchaseEventCollector: Collector<PurchaseInfo> = .init(source: Ledger.purchaseEventSource)
     private lazy var productInfoCollector: Collector<Product> = .init(source: Ledger.productInfoSource)
 
@@ -16,27 +17,31 @@ final class ExampleViewController: UIViewController {
         return label
     }()
 
-    private lazy var purchaseButton: UIButton = {
+    private lazy var monthlyButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Purchase non-consumable", for: .normal)
-        button.addTarget(self, action: #selector(purchaseButtonPressed), for: .touchUpInside)
+        button.setTitle("Purchase monthly", for: .normal)
+        button.addTarget(self, action: #selector(monthlyButtonPressed), for: .touchUpInside)
         return button
     }()
 
-    private lazy var subscribeButton: UIButton = {
+    private lazy var yearlyButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Purchase subscription", for: .normal)
-        button.addTarget(self, action: #selector(subscribeButtonPressed), for: .touchUpInside)
+        button.setTitle("Purchase yearly", for: .normal)
+        button.addTarget(self, action: #selector(yearlyButtonPressed), for: .touchUpInside)
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(greetingLabel)
-        view.addSubview(purchaseButton)
-        view.addSubview(subscribeButton)
+        view.addSubview(monthlyButton)
+        view.addSubview(yearlyButton)
         view.backgroundColor = .white
         checkSubscriptionStatus()
+
+        receiptUpdateEventCollector.subscribe { (receipt: Receipt) in
+            print(receipt)
+        }
 
         productInfoCollector.subscribe { (product: Product) in
             print(product)
@@ -52,23 +57,23 @@ final class ExampleViewController: UIViewController {
         greetingLabel.sizeToFit()
         greetingLabel.center = view.center
 
-        purchaseButton.sizeToFit()
-        purchaseButton.center = .init(x: view.bounds.midX, y: 0.75 * view.bounds.height)
+        monthlyButton.sizeToFit()
+        monthlyButton.center = .init(x: view.bounds.midX, y: 0.75 * view.bounds.height)
 
-        subscribeButton.sizeToFit()
-        subscribeButton.center = .init(x: view.bounds.midX, y: 0.25 * view.bounds.height)
+        yearlyButton.sizeToFit()
+        yearlyButton.center = .init(x: view.bounds.midX, y: 0.25 * view.bounds.height)
     }
 
-    @objc private func purchaseButtonPressed() {
-        Ledger.purchaseProduct(withIdentifier: "com.filmm.filmm.pack.dream") { (error: Error?) in
+    @objc private func monthlyButtonPressed() {
+        Ledger.purchaseProduct(withIdentifier: Constants.monthlySubscriptionIdentifier) { (error: Error?) in
             if let error = error {
                 self.showAlert(withTitle: "Error", message: error.localizedDescription)
             }
         }
     }
 
-    @objc private func subscribeButtonPressed() {
-        Ledger.purchaseProduct(withIdentifier: "com.filmm.filmm.plus") { (error: Error?) in
+    @objc private func yearlyButtonPressed() {
+        Ledger.purchaseProduct(withIdentifier: Constants.yearlySubscriptionIdentifier) { (error: Error?) in
             if let error = error {
                 self.showAlert(withTitle: "Error", message: error.localizedDescription)
             }
@@ -77,6 +82,8 @@ final class ExampleViewController: UIViewController {
 
     private func checkSubscriptionStatus() {
         greetingLabel.text = "isSubscribed: \(Ledger.isAnySubscriptionActive())"
+        view.setNeedsLayout()
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.checkSubscriptionStatus()
         }

@@ -34,11 +34,10 @@ public final class Ledger {
     private static var purchaseEventEmitter: Emitter<PurchaseInfo> = .init(valueStackDepth: 0)
     public static var purchaseEventSource: AnyEventSource<PurchaseInfo> = .init(purchaseEventEmitter)
 
-    public static var productInfoEmitter: Emitter<Product> = .init()
+    private static var productInfoEmitter: Emitter<Product> = .init()
     public static var productInfoSource: AnyEventSource<Product> = .init(productInfoEmitter)
 
-    public static var isDebugModeEnabled: Bool = false
-    public static var debugModeReceipt: Receipt = .init()
+    public static var skipReceiptValidation: Bool = false
 
     public static var referenceDate: Date {
         return Clock.now ?? Date()
@@ -51,11 +50,22 @@ public final class Ledger {
     public static func start(sharedSecret: String) {
         self.sharedSecret = sharedSecret
         #if targetEnvironment(simulator)
-        isDebugModeEnabled = true
+        skipReceiptValidation = true
         #endif
 
         Clock.sync()
         SwiftyStoreKit.completeTransactions(atomically: false) { (purchases: [Purchase]) in
+            if skipReceiptValidation {
+                let identifiers = purchases.map { (purchase: Purchase) -> String in
+                    return purchase.productId
+                }
+                fetchProducts(withIdentifiers: identifiers) { (products: [String: Product]) in
+                    for product in products.values {
+                        receipt.purchases[product.identifier] = .init(product: product)
+                    }
+                }
+            }
+
             validateReceipt { (_: Receipt) in
                 for purchase in purchases where purchase.needsFinishTransaction {
                     SwiftyStoreKit.finishTransaction(purchase.transaction)
@@ -66,10 +76,7 @@ public final class Ledger {
             }
         }
 
-        validateReceipt { (receipt: Receipt) in
-            print("[II] Receipt validated")
-            print(receipt)
-        }
+        validateReceipt()
     }
 
     public static func removeCachedReceipt() {
@@ -121,6 +128,10 @@ public final class Ledger {
             SwiftyStoreKit.purchaseProduct(product.storeProduct, atomically: false) { (result: PurchaseResult) in
                 switch result {
                 case let .success(details):
+                    if skipReceiptValidation {
+                        receipt.purchases[identifier] = .init(product: product)
+                    }
+
                     validateReceipt { (_: Receipt) in
                         if details.needsFinishTransaction {
                             SwiftyStoreKit.finishTransaction(details.transaction)
@@ -138,7 +149,12 @@ public final class Ledger {
                     }
                 case let .error(error):
                     DispatchQueue.main.async {
-                        completion(error.code == .unknown ? nil : error)
+                        switch error.code {
+                        case .unknown, .paymentCancelled:
+                            completion(nil)
+                        default:
+                            completion(error)
+                        }
                     }
                 }
             }
@@ -196,11 +212,10 @@ public final class Ledger {
         return receipt
     }
 
-    private static func validateReceipt(success: @escaping (Receipt) -> Void, failure: @escaping (Swift.Error) -> Void = { _ in }) {
-        if isDebugModeEnabled {
-            objc_sync_enter(self)
-            receipt = debugModeReceipt
-            objc_sync_exit(self)
+    private static func validateReceipt(success: @escaping (Receipt) -> Void = { _ in },
+                                        failure: @escaping (Swift.Error) -> Void = { _ in }) {
+        if skipReceiptValidation {
+            receiptUpdateEventEmitter.replace(receipt)
             return success(receipt)
         }
 

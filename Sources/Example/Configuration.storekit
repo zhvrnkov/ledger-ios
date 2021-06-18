@@ -1,26 +1,64 @@
 {
   "products" : [
-    {
-      "displayPrice" : "0.99",
-      "familyShareable" : false,
-      "internalID" : "3453A242",
-      "localizations" : [
-        {
-          "description" : "",
-          "displayName" : "Test Purchase",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "com.filmm.filmm.pack.dream",
-      "referenceName" : "Test Purchase",
-      "type" : "NonConsumable"
-    }
+
   ],
   "settings" : {
     "_billingIssuesEnabled" : true
   },
   "subscriptionGroups" : [
+    {
+      "id" : "8C94BC0E",
+      "localizations" : [
 
+      ],
+      "name" : "Group",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "73DA62A4",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.demomusic.demo.subscription.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Yearly Subscription",
+          "subscriptionGroupID" : "8C94BC0E",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "B6C6C6C3",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.demomusic.demo.subscription.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Subscription",
+          "subscriptionGroupID" : "8C94BC0E",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
   ],
   "version" : {
     "major" : 1,
