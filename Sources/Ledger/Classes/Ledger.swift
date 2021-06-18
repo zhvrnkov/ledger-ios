@@ -60,18 +60,22 @@ public final class Ledger {
                     return purchase.productId
                 }
                 fetchProducts(withIdentifiers: identifiers) { (products: [String: Product]) in
+                    objc_sync_enter(self)
                     for product in products.values {
                         receipt.purchases[product.identifier] = .init(product: product)
                     }
+                    objc_sync_exit(self)
                 }
             }
 
             validateReceipt { (_: Receipt) in
                 for purchase in purchases where purchase.needsFinishTransaction {
                     SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    objc_sync_enter(self)
                     if let purchaseInfo = receipt.purchaseInfo(withIdentifier: purchase.productId) {
                         purchaseEventEmitter.emit(purchaseInfo)
                     }
+                    objc_sync_exit(self)
                 }
             }
         }
@@ -129,16 +133,20 @@ public final class Ledger {
                 switch result {
                 case let .success(details):
                     if skipReceiptValidation {
+                        objc_sync_enter(self)
                         receipt.purchases[identifier] = .init(product: product)
+                        objc_sync_exit(self)
                     }
 
                     validateReceipt { (_: Receipt) in
                         if details.needsFinishTransaction {
                             SwiftyStoreKit.finishTransaction(details.transaction)
                         }
+                        objc_sync_enter(self)
                         if let purchaseInfo = receipt.purchaseInfo(withIdentifier: details.productId) {
                             purchaseEventEmitter.emit(purchaseInfo)
                         }
+                        objc_sync_exit(self)
                         DispatchQueue.main.async {
                             completion(nil)
                         }
