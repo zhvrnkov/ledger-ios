@@ -46,6 +46,7 @@ public final class Ledger {
     private static var sharedSecret: String = .init()
     private static var productCache: NSCache<NSString, Product> = .init()
     private static var keychain: Keychain = .init(service: Constants.keychainService)
+    private static var didInitiatePurchaseFlow: Bool = false
 
     public static func start(sharedSecret: String) {
         self.sharedSecret = sharedSecret
@@ -83,9 +84,11 @@ public final class Ledger {
         refreshReceipt()
     }
 
-    public static func refreshReceipt(success: @escaping (Receipt) -> Void = { _ in },
+    public static func refreshReceipt(force: Bool = false,
+                                      success: @escaping (Receipt) -> Void = { _ in },
                                       failure: @escaping (Swift.Error) -> Void = { _ in }) {
-        if skipReceiptValidation {
+        let isEmptyReceipt = (didInitiatePurchaseFlow == false) && (SwiftyStoreKit.localReceiptData == nil)
+        if (skipReceiptValidation || isEmptyReceipt), force == false {
             receiptUpdateEventEmitter.replace(receipt)
             return success(receipt)
         }
@@ -155,6 +158,7 @@ public final class Ledger {
                 return completion(Error.noProduct)
             }
 
+            didInitiatePurchaseFlow = true
             SwiftyStoreKit.purchaseProduct(product.storeProduct, atomically: false) { (result: PurchaseResult) in
                 switch result {
                 case let .success(details):
