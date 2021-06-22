@@ -35,3 +35,9 @@ public final class Product: CustomStringConvertible {
         subscriptionPeriod = storeProduct.subscriptionPeriod
     }
 }
+
+extension Product: Equatable {
+    public static func == (lhs: Product, rhs: Product) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+}

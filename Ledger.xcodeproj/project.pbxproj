@@ -124,8 +124,8 @@
 			children = (
 				32E5CB4F7E6008CA2D0A6411 /* AppDelegate.swift */,
 				0E66733DB1CC9A1C4CF3FD37 /* ExampleViewController.swift */,
-				57D7DB19267B2D4F0007FF86 /* Configuration.storekit */,
 				57D7DB64267C50DD0007FF86 /* Constants.swift */,
+				57D7DB19267B2D4F0007FF86 /* Configuration.storekit */,
 			);
 			name = Example;
 			path = Sources/Example;
