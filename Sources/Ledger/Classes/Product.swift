@@ -20,7 +20,7 @@ public final class Product: CustomStringConvertible {
         return "\(identifier) [\(price ?? "N/A")]"
     }
 
-    let storeProduct: SKProduct
+    public let storeProduct: SKProduct
 
     init(storeProduct: SKProduct) {
         self.storeProduct = storeProduct
