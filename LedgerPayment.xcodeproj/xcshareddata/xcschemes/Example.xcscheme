@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C63ED7EA67F3DD405FABA36"
-               BuildableName = "Ledger.framework"
-               BlueprintName = "Ledger"
-               ReferencedContainer = "container:Ledger.xcodeproj">
+               BlueprintIdentifier = "FABCC282AA229324E31A3D7E"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
+               ReferencedContainer = "container:LedgerPayment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FABCC282AA229324E31A3D7E"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:LedgerPayment.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C63ED7EA67F3DD405FABA36"
-            BuildableName = "Ledger.framework"
-            BlueprintName = "Ledger"
-            ReferencedContainer = "container:Ledger.xcodeproj">
+            BlueprintIdentifier = "FABCC282AA229324E31A3D7E"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:LedgerPayment.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

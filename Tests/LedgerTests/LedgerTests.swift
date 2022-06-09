@@ -1,5 +1,5 @@
 import XCTest
-@testable import Ledger
+@testable import LedgerPayment
 
 final class LedgerTests: XCTestCase {
     func testExample() {
