@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4414B960F04290E62FA8CCE6 /* LedgerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D5E5940F7B5D8B1F4B4A2 /* LedgerTests.swift */; };
+		4414B960F04290E62FA8CCE6 /* LedgerPaymentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D5E5940F7B5D8B1F4B4A2 /* LedgerPaymentTests.swift */; };
 		57D7DAD42679EC640007FF86 /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7DAD32679EC640007FF86 /* Ledger.swift */; };
 		57D7DAE12679EE640007FF86 /* SwiftyStoreKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DADF2679EE640007FF86 /* SwiftyStoreKit.xcframework */; };
 		57D7DAE32679EE640007FF86 /* KeychainAccess.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DAE02679EE640007FF86 /* KeychainAccess.xcframework */; };
@@ -30,6 +30,9 @@
 		8892CE47BF2B28AD928864EA /* LedgerPayment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 810548AB366887C01104E65A /* LedgerPayment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A9C9A524BFEB3F96D03181F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5CB4F7E6008CA2D0A6411 /* AppDelegate.swift */; };
 		9F6211236FC0F5BEA9E7545A /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF776268A36D999698D4F267 /* XCTestManifests.swift */; };
+		A923D0C028530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = A923D0BF28530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift */; };
+		A9C85B432851E3FC007AFAD8 /* NSNumber+localizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C85B412851E3F8007AFAD8 /* NSNumber+localizedPrice.swift */; };
+		A9C85B492851EC0B007AFAD8 /* IntroductoryOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C85B482851EC0B007AFAD8 /* IntroductoryOffer.swift */; };
 		FC8EF8D6F576F130B0DB5FDC /* LedgerPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810548AB366887C01104E65A /* LedgerPayment.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,8 +79,11 @@
 		57D7DB64267C50DD0007FF86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		57D7DB6F267C5B930007FF86 /* PurchaseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInfo.swift; sourceTree = "<group>"; };
 		810548AB366887C01104E65A /* LedgerPayment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LedgerPayment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		824D5E5940F7B5D8B1F4B4A2 /* LedgerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerTests.swift; sourceTree = "<group>"; };
+		824D5E5940F7B5D8B1F4B4A2 /* LedgerPaymentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerPaymentTests.swift; sourceTree = "<group>"; };
 		A912FD0D6935E8923A47B2BB /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A923D0BF28530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProductSubscriptionPeriod+Period.swift"; sourceTree = "<group>"; };
+		A9C85B412851E3F8007AFAD8 /* NSNumber+localizedPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber+localizedPrice.swift"; sourceTree = "<group>"; };
+		A9C85B482851EC0B007AFAD8 /* IntroductoryOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductoryOffer.swift; sourceTree = "<group>"; };
 		CF776268A36D999698D4F267 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		E182707A9CD19B362359E7E6 /* LedgerPaymentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LedgerPaymentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +119,7 @@
 		386FEA08CC77E210641F703D /* Ledger */ = {
 			isa = PBXGroup;
 			children = (
+				A9C85B402851E3D4007AFAD8 /* Extension */,
 				57D7DAD22679EC5B0007FF86 /* Classes */,
 			);
 			name = Ledger;
@@ -136,6 +143,7 @@
 			children = (
 				57D7DAD32679EC640007FF86 /* Ledger.swift */,
 				57D7DAEA2679EECE0007FF86 /* Product.swift */,
+				A9C85B482851EC0B007AFAD8 /* IntroductoryOffer.swift */,
 				57D7DB0A2679FEC60007FF86 /* Receipt.swift */,
 				57D7DB6F267C5B930007FF86 /* PurchaseInfo.swift */,
 			);
@@ -159,7 +167,7 @@
 			children = (
 				469FF3D94E7172C8F8982084 /* Example */,
 				386FEA08CC77E210641F703D /* Ledger */,
-				AB6FAE02FB7DA664504091C9 /* LedgerTests */,
+				AB6FAE02FB7DA664504091C9 /* LedgerPaymentTests */,
 				672E309D080729BF93B82C50 /* Products */,
 				57D7DADE2679EE640007FF86 /* Frameworks */,
 			);
@@ -175,14 +183,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AB6FAE02FB7DA664504091C9 /* LedgerTests */ = {
+		A9C85B402851E3D4007AFAD8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				824D5E5940F7B5D8B1F4B4A2 /* LedgerTests.swift */,
+				A9C85B412851E3F8007AFAD8 /* NSNumber+localizedPrice.swift */,
+				A923D0BF28530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AB6FAE02FB7DA664504091C9 /* LedgerPaymentTests */ = {
+			isa = PBXGroup;
+			children = (
+				824D5E5940F7B5D8B1F4B4A2 /* LedgerPaymentTests.swift */,
 				CF776268A36D999698D4F267 /* XCTestManifests.swift */,
 			);
-			name = LedgerTests;
-			path = Tests/LedgerTests;
+			name = LedgerPaymentTests;
+			path = Tests/LedgerPaymentTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4414B960F04290E62FA8CCE6 /* LedgerTests.swift in Sources */,
+				4414B960F04290E62FA8CCE6 /* LedgerPaymentTests.swift in Sources */,
 				9F6211236FC0F5BEA9E7545A /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D7DB70267C5B930007FF86 /* PurchaseInfo.swift in Sources */,
+				A923D0C028530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift in Sources */,
+				A9C85B492851EC0B007AFAD8 /* IntroductoryOffer.swift in Sources */,
+				A9C85B432851E3FC007AFAD8 /* NSNumber+localizedPrice.swift in Sources */,
 				57D7DB0B2679FEC60007FF86 /* Receipt.swift in Sources */,
 				57D7DAD42679EC640007FF86 /* Ledger.swift in Sources */,
 				57D7DAEB2679EECE0007FF86 /* Product.swift in Sources */,
