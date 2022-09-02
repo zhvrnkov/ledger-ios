@@ -24,7 +24,7 @@ public struct PurchaseInfo: Codable {
 
     init(product: Product) {
         identifier = product.identifier
-        if product.period.numberOfUnits != nil {
+        if product.period?.numberOfUnits != nil {
             type = .subscription
             var dateComponents: DateComponents = .init()
             switch product.period {
@@ -36,7 +36,7 @@ public struct PurchaseInfo: Codable {
                 dateComponents.month = count
             case let .year(count):
                 dateComponents.year = count
-            case .unknown:
+            default:
                 break
             }
             expirationDate = Calendar.current.date(byAdding: dateComponents, to: Date()) ?? .init()
