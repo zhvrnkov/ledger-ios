@@ -46,7 +46,7 @@ public extension SKProductSubscriptionPeriod {
             }
         }
 
-        public func descriptionWithFormate(_ dateFormate: String = "d MMMM, yyyy") -> String {
+        public func descriptionWithFormat(_ dateFormat: String = "d MMMM, yyyy") -> String {
             var dateComponents: DateComponents = .init()
             switch self {
             case let .day(count):
@@ -60,7 +60,7 @@ public extension SKProductSubscriptionPeriod {
             case .unknown:
                 return "N/A"
             }
-            return descriptionEnded(dateComponents, dateFormat: dateFormate)
+            return descriptionEnded(dateComponents, dateFormat: dateFormat)
         }
 
         public var numberOfUnits: Int? {
