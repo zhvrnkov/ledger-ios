@@ -27,13 +27,13 @@
 		57D7DB68267C50E20007FF86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7DB64267C50DD0007FF86 /* Constants.swift */; };
 		57D7DB70267C5B930007FF86 /* PurchaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7DB6F267C5B930007FF86 /* PurchaseInfo.swift */; };
 		6B0D957D9085D38ECE5FEEAA /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E66733DB1CC9A1C4CF3FD37 /* ExampleViewController.swift */; };
-		8892CE47BF2B28AD928864EA /* LedgerPayment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 810548AB366887C01104E65A /* LedgerPayment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8892CE47BF2B28AD928864EA /* PaymentLedger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 810548AB366887C01104E65A /* PaymentLedger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A9C9A524BFEB3F96D03181F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5CB4F7E6008CA2D0A6411 /* AppDelegate.swift */; };
 		9F6211236FC0F5BEA9E7545A /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF776268A36D999698D4F267 /* XCTestManifests.swift */; };
 		A923D0C028530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = A923D0BF28530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift */; };
 		A9C85B432851E3FC007AFAD8 /* NSNumber+localizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C85B412851E3F8007AFAD8 /* NSNumber+localizedPrice.swift */; };
 		A9C85B492851EC0B007AFAD8 /* IntroductoryOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C85B482851EC0B007AFAD8 /* IntroductoryOffer.swift */; };
-		FC8EF8D6F576F130B0DB5FDC /* LedgerPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810548AB366887C01104E65A /* LedgerPayment.framework */; };
+		FC8EF8D6F576F130B0DB5FDC /* PaymentLedger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810548AB366887C01104E65A /* PaymentLedger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 				57D7DB032679F9200007FF86 /* SwiftyStoreKit.xcframework in Embed Frameworks */,
 				57D7DB16267A064B0007FF86 /* Kronos.xcframework in Embed Frameworks */,
 				57D7DB56267B33D30007FF86 /* Ion.xcframework in Embed Frameworks */,
-				8892CE47BF2B28AD928864EA /* LedgerPayment.framework in Embed Frameworks */,
+				8892CE47BF2B28AD928864EA /* PaymentLedger.framework in Embed Frameworks */,
 				57D7DB012679F9200007FF86 /* KeychainAccess.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -78,14 +78,14 @@
 		57D7DB4E267B33C60007FF86 /* Ion.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Ion.xcframework; path = Carthage/Build/Ion.xcframework; sourceTree = "<group>"; };
 		57D7DB64267C50DD0007FF86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		57D7DB6F267C5B930007FF86 /* PurchaseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInfo.swift; sourceTree = "<group>"; };
-		810548AB366887C01104E65A /* LedgerPayment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LedgerPayment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		810548AB366887C01104E65A /* PaymentLedger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaymentLedger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		824D5E5940F7B5D8B1F4B4A2 /* LedgerPaymentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerPaymentTests.swift; sourceTree = "<group>"; };
 		A912FD0D6935E8923A47B2BB /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A923D0BF28530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProductSubscriptionPeriod+Period.swift"; sourceTree = "<group>"; };
 		A9C85B412851E3F8007AFAD8 /* NSNumber+localizedPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber+localizedPrice.swift"; sourceTree = "<group>"; };
 		A9C85B482851EC0B007AFAD8 /* IntroductoryOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductoryOffer.swift; sourceTree = "<group>"; };
 		CF776268A36D999698D4F267 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		E182707A9CD19B362359E7E6 /* LedgerPaymentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LedgerPaymentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E182707A9CD19B362359E7E6 /* PaymentLedgerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaymentLedgerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 			files = (
 				57D7DB15267A064B0007FF86 /* Kronos.xcframework in Frameworks */,
 				57D7DB022679F9200007FF86 /* SwiftyStoreKit.xcframework in Frameworks */,
-				FC8EF8D6F576F130B0DB5FDC /* LedgerPayment.framework in Frameworks */,
+				FC8EF8D6F576F130B0DB5FDC /* PaymentLedger.framework in Frameworks */,
 				57D7DB002679F9200007FF86 /* KeychainAccess.xcframework in Frameworks */,
 				57D7DB55267B33D30007FF86 /* Ion.xcframework in Frameworks */,
 				57D7DB072679F9440007FF86 /* StoreKit.framework in Frameworks */,
@@ -177,8 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				A912FD0D6935E8923A47B2BB /* Example.app */,
-				810548AB366887C01104E65A /* LedgerPayment.framework */,
-				E182707A9CD19B362359E7E6 /* LedgerPaymentTests.xctest */,
+				810548AB366887C01104E65A /* PaymentLedger.framework */,
+				E182707A9CD19B362359E7E6 /* PaymentLedgerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C63ED7EA67F3DD405FABA36 /* LedgerPayment */ = {
+		4C63ED7EA67F3DD405FABA36 /* PaymentLedger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD0B3ABF594D0EF5EF60062E /* Build configuration list for PBXNativeTarget "LedgerPayment" */;
+			buildConfigurationList = DD0B3ABF594D0EF5EF60062E /* Build configuration list for PBXNativeTarget "PaymentLedger" */;
 			buildPhases = (
 				F1F080D0181C4541717A419D /* Sources */,
 				57D7DADB2679EE4D0007FF86 /* Frameworks */,
@@ -216,14 +216,14 @@
 			);
 			dependencies = (
 			);
-			name = LedgerPayment;
+			name = PaymentLedger;
 			productName = Ledger;
-			productReference = 810548AB366887C01104E65A /* LedgerPayment.framework */;
+			productReference = 810548AB366887C01104E65A /* PaymentLedger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5AE5CE9D99FDD7773336970B /* LedgerPaymentTests */ = {
+		5AE5CE9D99FDD7773336970B /* PaymentLedgerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C53B56AC06D5216309B946BA /* Build configuration list for PBXNativeTarget "LedgerPaymentTests" */;
+			buildConfigurationList = C53B56AC06D5216309B946BA /* Build configuration list for PBXNativeTarget "PaymentLedgerTests" */;
 			buildPhases = (
 				C48FFF1C1B2301F1E92EFDE4 /* Sources */,
 				161F7CA804423A1C87B1405A /* Swiftlint */,
@@ -232,9 +232,9 @@
 			);
 			dependencies = (
 			);
-			name = LedgerPaymentTests;
+			name = PaymentLedgerTests;
 			productName = LedgerTests;
-			productReference = E182707A9CD19B362359E7E6 /* LedgerPaymentTests.xctest */;
+			productReference = E182707A9CD19B362359E7E6 /* PaymentLedgerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		FABCC282AA229324E31A3D7E /* Example */ = {
@@ -269,7 +269,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 700EA40EC2902E5BA06B39FA /* Build configuration list for PBXProject "LedgerPayment" */;
+			buildConfigurationList = 700EA40EC2902E5BA06B39FA /* Build configuration list for PBXProject "PaymentLedger" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -282,8 +282,8 @@
 			projectRoot = "";
 			targets = (
 				FABCC282AA229324E31A3D7E /* Example */,
-				4C63ED7EA67F3DD405FABA36 /* LedgerPayment */,
-				5AE5CE9D99FDD7773336970B /* LedgerPaymentTests */,
+				4C63ED7EA67F3DD405FABA36 /* PaymentLedger */,
+				5AE5CE9D99FDD7773336970B /* PaymentLedgerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -366,7 +366,7 @@
 /* Begin PBXTargetDependency section */
 		F9A72B3F636C130C90C50EA9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4C63ED7EA67F3DD405FABA36 /* LedgerPayment */;
+			target = 4C63ED7EA67F3DD405FABA36 /* PaymentLedger */;
 			targetProxy = A304449CCE9FE073B915A580 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -405,7 +405,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.LedgerTests;
-				PRODUCT_NAME = LedgerPaymentTests;
+				PRODUCT_NAME = PaymentLedgerTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -430,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.ledger;
-				PRODUCT_NAME = LedgerPayment;
+				PRODUCT_NAME = PaymentLedger;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,7 +451,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.LedgerTests;
-				PRODUCT_NAME = LedgerPaymentTests;
+				PRODUCT_NAME = PaymentLedgerTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -614,7 +614,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.ledger;
-				PRODUCT_NAME = LedgerPayment;
+				PRODUCT_NAME = PaymentLedger;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -627,7 +627,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		700EA40EC2902E5BA06B39FA /* Build configuration list for PBXProject "LedgerPayment" */ = {
+		700EA40EC2902E5BA06B39FA /* Build configuration list for PBXProject "PaymentLedger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3CA30C737304FE993AD41E6 /* Debug */,
@@ -645,7 +645,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C53B56AC06D5216309B946BA /* Build configuration list for PBXNativeTarget "LedgerPaymentTests" */ = {
+		C53B56AC06D5216309B946BA /* Build configuration list for PBXNativeTarget "PaymentLedgerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59146A2660FE00A476B93B48 /* Debug */,
@@ -654,7 +654,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		DD0B3ABF594D0EF5EF60062E /* Build configuration list for PBXNativeTarget "LedgerPayment" */ = {
+		DD0B3ABF594D0EF5EF60062E /* Build configuration list for PBXNativeTarget "PaymentLedger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7A88946D48E8C1205C767E7 /* Debug */,
