@@ -8,7 +8,7 @@ import StoreKit
 public final class IntroductoryOffer: CustomStringConvertible {
 
     public let price: String
-    public let period: SKProductSubscriptionPeriod.Period
+    public let period: SubscriptionPeriod
     public let paymentMode: SKProductDiscount.PaymentMode
 
     public var description: String {

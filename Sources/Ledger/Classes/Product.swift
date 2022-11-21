@@ -10,8 +10,8 @@ public final class Product: CustomStringConvertible {
     public let title: String
     public let info: String
     public let price: String?
-    public let period: SKProductSubscriptionPeriod.Period?
-
+    
+    public let period: SubscriptionPeriod?
     public let introductoryOffer: IntroductoryOffer?
 
     public let rawPrice: NSDecimalNumber

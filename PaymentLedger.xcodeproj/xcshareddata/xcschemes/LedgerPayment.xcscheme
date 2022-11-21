@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4C63ED7EA67F3DD405FABA36"
-               BuildableName = "LedgerPayment.framework"
+               BuildableName = "PaymentLedger.framework"
                BlueprintName = "PaymentLedger"
                ReferencedContainer = "container:PaymentLedger.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C63ED7EA67F3DD405FABA36"
-            BuildableName = "LedgerPayment.framework"
+            BuildableName = "PaymentLedger.framework"
             BlueprintName = "PaymentLedger"
             ReferencedContainer = "container:PaymentLedger.xcodeproj">
          </BuildableReference>

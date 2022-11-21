@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4414B960F04290E62FA8CCE6 /* LedgerPaymentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D5E5940F7B5D8B1F4B4A2 /* LedgerPaymentTests.swift */; };
+		4414B960F04290E62FA8CCE6 /* PaymentLedgerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D5E5940F7B5D8B1F4B4A2 /* PaymentLedgerTests.swift */; };
+		552EAB52292B2D9D00FFC733 /* SubscriptionPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552EAB51292B2D9D00FFC733 /* SubscriptionPeriod.swift */; };
 		57D7DAD42679EC640007FF86 /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7DAD32679EC640007FF86 /* Ledger.swift */; };
 		57D7DAE12679EE640007FF86 /* SwiftyStoreKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DADF2679EE640007FF86 /* SwiftyStoreKit.xcframework */; };
 		57D7DAE32679EE640007FF86 /* KeychainAccess.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D7DAE02679EE640007FF86 /* KeychainAccess.xcframework */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		0E66733DB1CC9A1C4CF3FD37 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		32E5CB4F7E6008CA2D0A6411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		552EAB51292B2D9D00FFC733 /* SubscriptionPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPeriod.swift; sourceTree = "<group>"; };
 		57D7DAD32679EC640007FF86 /* Ledger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
 		57D7DADF2679EE640007FF86 /* SwiftyStoreKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyStoreKit.xcframework; path = Carthage/Build/SwiftyStoreKit.xcframework; sourceTree = "<group>"; };
 		57D7DAE02679EE640007FF86 /* KeychainAccess.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KeychainAccess.xcframework; path = Carthage/Build/KeychainAccess.xcframework; sourceTree = "<group>"; };
@@ -79,7 +81,7 @@
 		57D7DB64267C50DD0007FF86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		57D7DB6F267C5B930007FF86 /* PurchaseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInfo.swift; sourceTree = "<group>"; };
 		810548AB366887C01104E65A /* PaymentLedger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaymentLedger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		824D5E5940F7B5D8B1F4B4A2 /* LedgerPaymentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerPaymentTests.swift; sourceTree = "<group>"; };
+		824D5E5940F7B5D8B1F4B4A2 /* PaymentLedgerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentLedgerTests.swift; sourceTree = "<group>"; };
 		A912FD0D6935E8923A47B2BB /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A923D0BF28530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProductSubscriptionPeriod+Period.swift"; sourceTree = "<group>"; };
 		A9C85B412851E3F8007AFAD8 /* NSNumber+localizedPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber+localizedPrice.swift"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				A9C85B482851EC0B007AFAD8 /* IntroductoryOffer.swift */,
 				57D7DB0A2679FEC60007FF86 /* Receipt.swift */,
 				57D7DB6F267C5B930007FF86 /* PurchaseInfo.swift */,
+				552EAB51292B2D9D00FFC733 /* SubscriptionPeriod.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -167,7 +170,7 @@
 			children = (
 				469FF3D94E7172C8F8982084 /* Example */,
 				386FEA08CC77E210641F703D /* Ledger */,
-				AB6FAE02FB7DA664504091C9 /* LedgerPaymentTests */,
+				AB6FAE02FB7DA664504091C9 /* PaymentLedgerTests */,
 				672E309D080729BF93B82C50 /* Products */,
 				57D7DADE2679EE640007FF86 /* Frameworks */,
 			);
@@ -192,14 +195,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		AB6FAE02FB7DA664504091C9 /* LedgerPaymentTests */ = {
+		AB6FAE02FB7DA664504091C9 /* PaymentLedgerTests */ = {
 			isa = PBXGroup;
 			children = (
-				824D5E5940F7B5D8B1F4B4A2 /* LedgerPaymentTests.swift */,
+				824D5E5940F7B5D8B1F4B4A2 /* PaymentLedgerTests.swift */,
 				CF776268A36D999698D4F267 /* XCTestManifests.swift */,
 			);
-			name = LedgerPaymentTests;
-			path = Tests/LedgerPaymentTests;
+			name = PaymentLedgerTests;
+			path = Tests/PaymentLedgerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +245,6 @@
 			buildConfigurationList = 9B28693BBB92884ACFBEE925 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				FFAB9EE74DF6CD67CB8375B4 /* Sources */,
-				E244BC581F6C6BE0BAE60B46 /* Swiftlint */,
 				2A49C3D3D83180C9F1257206 /* Frameworks */,
 				93FE9847DBCC8F232A664F4C /* Embed Frameworks */,
 			);
@@ -307,24 +309,6 @@
 			shellPath = /bin/sh;
 			shellScript = swiftlint;
 		};
-		E244BC581F6C6BE0BAE60B46 /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = swiftlint;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -332,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4414B960F04290E62FA8CCE6 /* LedgerPaymentTests.swift in Sources */,
+				4414B960F04290E62FA8CCE6 /* PaymentLedgerTests.swift in Sources */,
 				9F6211236FC0F5BEA9E7545A /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +328,7 @@
 				57D7DB70267C5B930007FF86 /* PurchaseInfo.swift in Sources */,
 				A923D0C028530244002B2B03 /* SKProductSubscriptionPeriod+Period.swift in Sources */,
 				A9C85B492851EC0B007AFAD8 /* IntroductoryOffer.swift in Sources */,
+				552EAB52292B2D9D00FFC733 /* SubscriptionPeriod.swift in Sources */,
 				A9C85B432851E3FC007AFAD8 /* NSNumber+localizedPrice.swift in Sources */,
 				57D7DB0B2679FEC60007FF86 /* Receipt.swift in Sources */,
 				57D7DAD42679EC640007FF86 /* Ledger.swift in Sources */,
@@ -380,7 +365,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ZF48BX7VX6;
-				INFOPLIST_FILE = LedgerPayment.xcodeproj/Example.plist;
+				INFOPLIST_FILE = PaymentLedger.xcodeproj/Example.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -422,7 +407,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LedgerPayment.xcodeproj/Ledger.plist;
+				INFOPLIST_FILE = PaymentLedger.xcodeproj/PaymentLedger.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -582,7 +567,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ZF48BX7VX6;
-				INFOPLIST_FILE = LedgerPayment.xcodeproj/Example.plist;
+				INFOPLIST_FILE = PaymentLedger.xcodeproj/Example.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,7 +591,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LedgerPayment.xcodeproj/Ledger.plist;
+				INFOPLIST_FILE = PaymentLedger.xcodeproj/PaymentLedger.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

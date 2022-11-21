@@ -3,7 +3,7 @@
 //
 
 import UIKit
-import LedgerPayment
+import PaymentLedger
 import Ion
 
 final class ExampleViewController: UIViewController {
